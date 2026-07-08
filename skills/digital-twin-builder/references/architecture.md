@@ -2,7 +2,7 @@
 
 ## 五层架构（每层职责 + 可替换点）
 
-| 层 | 职责 | 示例Agent 实现 | 可替换点 |
+| 层 | 职责 | 参考实现 | 可替换点 |
 |---|---|---|---|
 | 感知 | 接收用户消息/事件 | `lark-cli event consume im.message.receive_v1 --as bot`（NDJSON 流） | 换平台=换事件源（企微回调、Slack Events API、Web WS） |
 | 大脑 | 理解+检索+生成+工具编排 | headless LLM agent：`claude -p` 或 `codex exec`，cwd=知识库 | 换模型=换 provider；换 agent 框架=Claude Code/Codex/自研 ReAct |

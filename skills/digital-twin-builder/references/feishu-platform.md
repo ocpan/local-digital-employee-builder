@@ -37,4 +37,4 @@
 - 访客硬隔离：访客大脑用 `-s read-only` 沙箱（拦写+网络），叠加人格铁律。
 
 ## 机器人↔机器人（测试别的机器人）
-飞书不把机器人消息推给另一个机器人，无法直连。要测目标机器人：以**本人 user 身份**给它发消息（`+messages-send --as user`）→ 它正常回复 → `+messages-search` 读回回复分析。参考 示例Agent 的 `skills/bot-tester/`。仅本人可用（用本人身份发消息）。
+飞书不把机器人消息推给另一个机器人，无法直连。要测目标机器人：以**本人 user 身份**给它发消息（`+messages-send --as user`）→ 它正常回复 → `+messages-search` 读回回复分析。可自建 bot-tester skill。仅本人可用（用本人身份发消息）。

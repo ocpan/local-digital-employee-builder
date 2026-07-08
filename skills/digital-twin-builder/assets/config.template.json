@@ -1,8 +1,8 @@
 {
-  "_说明": "数字分身配置模板。<尖括号>为占位，按实际替换。来自 示例Agent 参考实现。",
+  "_说明": "数字分身配置模板。<尖括号>为占位，按实际替换。来自参考实现。",
 
   "app_id": "<飞书自建应用 app_id，如 cli_xxx>",
-  "bot_name": "<分身对外显示名，如 示例Agent>",
+  "bot_name": "<分身对外显示名，如 Nova>",
 
   "owner_open_id": "<本人飞书 open_id，ou_xxx，用于识别本人>",
   "owner_chat_id": "<本人与机器人的 P2P chat_id，oc_xxx，用于转交>",
