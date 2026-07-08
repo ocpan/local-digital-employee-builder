@@ -1,0 +1,6 @@
+brain_home/auth.json
+state/*.json
+state/codex_out_*
+logs/*.log
+__pycache__/
+.DS_Store

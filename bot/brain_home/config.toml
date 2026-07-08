@@ -1,0 +1,12 @@
+# 机器人专用大脑配置（经 Codex CLI 接任意 OpenAI 兼容 API）：不带任何插件/MCP/通知
+model_provider = "aihub"
+model = "gpt-5.5"
+model_reasoning_effort = "medium"
+disable_response_storage = true
+preferred_auth_method = "apikey"
+
+[model_providers.aihub]
+name = "aihub"
+base_url = "https://<企业AIHub网关地址>/api/v1"
+wire_api = "responses"
+requires_openai_auth = true

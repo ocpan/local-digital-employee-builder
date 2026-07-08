@@ -1,0 +1,50 @@
+{
+  "_说明": "机器人配置。带 <...> 的是需要你填的；其余已配好可不动。让 Claude Code 帮你填最省事。",
+
+  "app_id": "<你的飞书应用 app_id，cli_ 开头，申请机器人后拿到>",
+  "bot_name": "<你的机器人名，如 Nova>",
+  "owner_open_id": "<你自己的飞书 open_id，ou_ 开头。让 Claude Code 用 lark-cli 查>",
+  "owner_name": "<你的名字>",
+
+  "_access_说明": "open=所有人可用（本人全权限/访客只读）；whitelist=仅名单内可用。新手先用 open 测试。",
+  "access_mode": "open",
+  "whitelist": [],
+  "redirect_text": "你好，我目前仅对特定同事开放～",
+
+  "group": { "_说明": "群聊仅在 @机器人 时响应", "enabled": true, "require_mention": true },
+
+  "_kb_说明": "知识库根目录（相对本项目）。大脑以此为工作目录，能读到里面的文档。",
+  "kb_root": "knowledge_base",
+  "kb_prefetch": {
+    "_说明": "知识类问题先自动检索再交大脑，提速。part_guest=访客可见分区、part_owner 空=本人看全部。",
+    "enabled": true,
+    "top_k": 6,
+    "part_guest": "公开",
+    "part_owner": ""
+  },
+
+  "_skill_说明": "机器人可调用的技能目录。默认加载同级 skills/（3 个方法论 skill）。",
+  "skill_roots": ["../skills"],
+  "skill_exclude": [],
+
+  "session_ttl_hours": 2,
+  "max_workers": 4,
+
+  "brain": {
+    "_说明": "大脑后端，可换成任意 OpenAI 兼容 API。provider=codex 用 Codex CLI 桥接任意 OpenAI 兼容网关（端点/密钥见 brain_home/）；=claude 走 Claude API。想接其他 API 时，改 brain_home/config.toml 的 base_url 与 brain_home/auth.json 的 key 即可，无需限定 Codex 官方服务。",
+    "provider": "codex",
+    "codex_bin": "codex",
+    "brain_home": "brain_home"
+  },
+
+  "claude_bin": "claude",
+  "claude_timeout_sec": 300,
+  "claude_max_turns": 25,
+
+  "ack_emoji": "Get",
+  "card_title": "🤖 你的机器人名",
+  "card_tag": "AI 自动回复",
+  "card_footer": "由 AI 生成，重要事项请与本人确认",
+  "error_text": "抱歉，我这边处理出了点问题，已记录日志。",
+  "unsupported_text": "我目前只支持文本消息，其他类型请直接联系本人～"
+}

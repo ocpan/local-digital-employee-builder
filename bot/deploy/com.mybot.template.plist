@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  7×24 常驻配置模板（macOS launchd）。让 Claude Code 帮你把下面的 <...> 替换成真实路径，
+  然后安装：
+    cp com.mybot.template.plist ~/Library/LaunchAgents/com.mybot.plist
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.mybot.plist
+    launchctl kickstart -k gui/$(id -u)/com.mybot
+  改了代码/配置后重启：launchctl kickstart -k gui/$(id -u)/com.mybot
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.mybot</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/caffeinate</string>
+    <string>-is</string>
+    <string>/usr/bin/env</string>
+    <string>python3</string>
+    <string>runner.py</string>
+  </array>
+  <key>WorkingDirectory</key><string><机器人 bot 目录的绝对路径></string>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>StandardOutPath</key><string><bot目录>/logs/launchd.out.log</string>
+  <key>StandardErrorPath</key><string><bot目录>/logs/launchd.err.log</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+  </dict>
+</dict>
+</plist>
