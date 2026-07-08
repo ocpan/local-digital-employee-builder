@@ -15,21 +15,21 @@
 
 ## 一、先装 4 样东西（30 分钟）
 
-不确定怎么装？没关系，**装好 Claude Code 后，直接把下面这段话发给它，它会一步步带你装完剩下的**：
+不确定怎么装？没关系，**装好你的 AI 编码工具（Claude Code、Cursor 等均可）后，直接把下面这段话发给它，它会一步步带你装完剩下的**：
 
 > 我要搭一个飞书 AI 机器人。请检查我电脑上有没有装好这几样，没有的就带我装：
-> ① Claude Code（你自己）② lark-cli（飞书命令行工具）③ python3 ④ Codex CLI（连企业 AIHub 大脑用）。
+> ① AI 编码工具（Claude Code/Cursor/Codex 等，你自己选一个）② lark-cli（飞书命令行工具）③ python3 ④ 大脑后端 CLI（Codex CLI 或 claude，按你选的 LLM API 决定）。
 > 装完帮我确认每个都能正常运行。
 
 手动清单（供参考）：
-1. **Claude Code** — 官网安装，这是你的"施工队长"。
+1. **AI 编码工具** — Claude Code（官网安装）或 Cursor / Windsurf / GitHub Copilot 等任意一个，这是你的"施工队长"。
 2. **lark-cli** — 飞书官方命令行：`npm install -g @larksuite/cli`（连不上就加 `--registry https://registry.npmjs.org/`）。
 3. **python3** — mac 一般自带；`python3 --version` 能出版本就行。
-4. **Codex CLI** — 机器人的"大脑"要连企业 AIHub 网关，需要它。让 Claude Code 帮你装最省事。
+4. **大脑后端** — 按你选的 LLM API 决定：用个人 OpenAI/Claude API Key 或企业内网 LLM 网关均可。具体见 `bot/brain_home/` 说明。让 AI 工具帮你配最省事。
 
-> ⚠️ **大脑网络要求**：本包大脑接的是 `<企业AIHub网关地址>`（企业内网网关）。
-> **你的电脑必须能访问这个地址**（在公司网络内 / 连了对应 VPN），否则大脑用不了。
-> 先在浏览器或终端确认能连通，再往下走。
+> ⚠️ **大脑网络要求**：如果你选择接企业内网 LLM 网关，你的电脑必须能访问该地址；如果用个人 API Key（OpenAI/Claude），有互联网即可。
+> 企业网关需在公司网络内/VPN，个人 API 无此限制。
+> 用企业网关时，先确认网络能连通再往下走。
 
 ---
 
@@ -38,7 +38,7 @@
 打开 `bot/brain_home/` 目录，你会看到一个文件：
 `auth.json.填入你的KEY后改名为auth.json`
 
-1. 用文本编辑器打开它，把 `<在这里粘贴 AIHub API Key>` 换成真正的 Key（提供包的人会单独把 Key 发给你）。
+1. 用文本编辑器打开它，把 `<在这里粘贴 API Key>` 换成你的 LLM API Key（OpenAI / Claude / 企业网关均可）（提供包的人会单独把 Key 发给你）。
 2. 把文件**改名为 `auth.json`**（去掉后面那串中文）。
 
 > Key 是敏感凭证，别截图、别发群、别提交到 GitHub。
@@ -50,7 +50,7 @@
 打开同目录的 **`01-申请飞书机器人指引.md`**，跟着图文步骤走一遍。
 拿到两样东西就行：**App ID**（cli_ 开头）和 **App Secret**。
 
-搞不定也没关系——第四步让 Claude Code 陪你一起弄。
+搞不定也没关系——第四步让 AI 工具陪你一起弄。
 
 ---
 
@@ -111,7 +111,7 @@
 ## 想让它更强？
 
 基础版只做"知识问答"。想加**附件分析、后台长任务、每日晨报、查业务系统**等进阶能力，
-对 Claude Code 说：
+对你的 AI 编码工具说：
 
 > 读 `skills/digital-twin-builder/references/advanced-capabilities.md`，帮我给机器人加上 <某个能力>。
 

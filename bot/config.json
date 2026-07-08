@@ -1,9 +1,9 @@
 {
-  "_说明": "机器人配置。带 <...> 的是需要你填的；其余已配好可不动。让 Claude Code 帮你填最省事。",
+  "_说明": "机器人配置。带 <...> 的是需要你填的；其余已配好可不动。让 AI 工具帮你填最省事。",
 
   "app_id": "<你的飞书应用 app_id，cli_ 开头，申请机器人后拿到>",
   "bot_name": "<你的机器人名，如 Nova>",
-  "owner_open_id": "<你自己的飞书 open_id，ou_ 开头。让 Claude Code 用 lark-cli 查>",
+  "owner_open_id": "<你自己的飞书 open_id，ou_ 开头。让 AI 工具用 lark-cli 查>",
   "owner_name": "<你的名字>",
 
   "_access_说明": "open=所有人可用（本人全权限/访客只读）；whitelist=仅名单内可用。新手先用 open 测试。",

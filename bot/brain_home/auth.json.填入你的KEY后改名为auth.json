@@ -1,4 +1,4 @@
 {
-  "OPENAI_API_KEY": "<在这里粘贴 AIHub API Key，然后把本文件改名为 auth.json>",
+  "OPENAI_API_KEY": "<在这里粘贴你的 LLM API Key（个人 OpenAI/Claude Key 或企业网关 Key），然后把本文件改名为 auth.json>",
   "auth_mode": "apikey"
 }
