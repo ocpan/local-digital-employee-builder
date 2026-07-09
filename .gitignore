@@ -1,1 +1,15 @@
 *.DS_Store
+
+# 凭证（绝对不能进版本库）
+bot/brain_home/auth.json
+
+# 运行状态（自动生成）
+bot/state/processed_ids.json
+bot/state/sessions.json
+
+# 日志
+bot/logs/*.log
+
+# 知识库索引（可重建）
+bot/knowledge_base/rag/
+bot/knowledge_base/wiki/

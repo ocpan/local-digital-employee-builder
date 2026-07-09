@@ -4,6 +4,7 @@
 
 ## 事件感知
 - 消费消息：`lark-cli event consume im.message.receive_v1 --as bot --quiet`，输出 NDJSON（一行一事件）。
+- **`--quiet` 输出的是扁平化 JSON**（非嵌套）：字段直接在顶层，如 `{"type":"im.message.receive_v1", "message_id":"om_...", "chat_id":"oc_...", "chat_type":"p2p", "message_type":"text", "sender_id":"ou_...", "content":"你好"}`。**不是** `{"event":{"message":{...}}}` 的嵌套结构！Runner 解析时必须兼容这种扁平格式。
 - **必须 `--as bot`**：auto 会解析成 user 而报错（该事件仅 bot）。
 - **子进程必须保持 stdin 打开**：consume 把 stdin EOF 当退出信号；nohup/Popen 下要给 `stdin=PIPE`，否则瞬间退出。
 - 精简事件字段：chat_id/chat_type/content/message_id/message_type/sender_id/timestamp。**不含** parent_id 等；要判"回复了哪条消息"需 `api GET /im/v1/messages/{id}` 看 `parent_id`/`upper_message_id`。

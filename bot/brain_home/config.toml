@@ -1,12 +1,21 @@
-# 机器人专用大脑配置（经 Codex CLI 接任意 OpenAI 兼容 API）：不带任何插件/MCP/通知
-model_provider = "aihub"
-model = "gpt-5.5"
+# 大脑后端配置（仅 brain.provider="codex" 时生效）
+# 经 Codex CLI 桥接任意 OpenAI 兼容 API：不带任何插件/MCP/通知
+#
+# 使用方法：
+# 1. 将下方 base_url 改为你的 LLM 网关地址
+# 2. 将 model 改为实际可用的模型名
+# 3. 在 auth.json 里填对应的 API Key
+#
+# 如果 brain.provider="claude"（使用 Claude CLI），本文件不会被读取。
+
+model_provider = "openai_compatible"
+model = "<你的模型名，如 gpt-4o / deepseek-chat / qwen-max>"
 model_reasoning_effort = "medium"
 disable_response_storage = true
 preferred_auth_method = "apikey"
 
-[model_providers.aihub]
-name = "aihub"
-base_url = "https://<企业AIHub网关地址>/api/v1"
+[model_providers.openai_compatible]
+name = "openai_compatible"
+base_url = "<你的 LLM 网关地址，如 https://api.openai.com/v1>"
 wire_api = "responses"
 requires_openai_auth = true

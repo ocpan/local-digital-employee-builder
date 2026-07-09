@@ -1,12 +1,12 @@
 {
-  "_说明": "机器人配置。带 <...> 的是需要你填的；其余已配好可不动。让 AI 工具帮你填最省事。",
+  "_说明": "机器人配置。",
 
-  "app_id": "<你的飞书应用 app_id，cli_ 开头，申请机器人后拿到>",
+  "app_id": "<你的飞书应用 app_id，cli_ 开头>",
   "bot_name": "<你的机器人名，如 Nova>",
-  "owner_open_id": "<你自己的飞书 open_id，ou_ 开头。让 AI 工具用 lark-cli 查>",
+  "owner_open_id": "<你自己的飞书 open_id，ou_ 开头>",
   "owner_name": "<你的名字>",
 
-  "_access_说明": "open=所有人可用（本人全权限/访客只读）；whitelist=仅名单内可用。新手先用 open 测试。",
+  "_access_说明": "open=所有人可用（本人全权限/访客只读）；whitelist=仅名单内可用。",
   "access_mode": "open",
   "whitelist": [],
   "redirect_text": "你好，我目前仅对特定同事开放～",
@@ -31,8 +31,8 @@
   "max_workers": 4,
 
   "brain": {
-    "_说明": "大脑后端，可换成任意 OpenAI 兼容 API。provider=codex 用 Codex CLI 桥接任意 OpenAI 兼容网关（端点/密钥见 brain_home/）；=claude 走 Claude API。想接其他 API 时，改 brain_home/config.toml 的 base_url 与 brain_home/auth.json 的 key 即可，无需限定 Codex 官方服务。",
-    "provider": "codex",
+    "_说明": "大脑后端，provider=claude 走 Claude CLI。",
+    "provider": "claude",
     "codex_bin": "codex",
     "brain_home": "brain_home"
   },

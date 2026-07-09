@@ -61,13 +61,18 @@
 
 > 我要用这个包搭一个飞书 AI 机器人，我是小白。请先读 `skills/digital-twin-builder/SKILL.md`，
 > 然后按下面的顺序带我做，每步做完等我确认再下一步：
-> 1. 读 `bot/runner.py` 的骨架注释，结合 `skills/digital-twin-builder/references/feishu-platform.md`，帮我把 runner.py **从骨架补全为完整实现**；
-> 2. 帮我把 `bot/config.json` 里带 `<...>` 的都填好（app_id、我的 open_id、机器人名字等，用 lark-cli 查我的 open_id）；
-> 3. 用我的飞书 App ID / Secret 帮我配置 lark-cli 的 bot 身份，并确认 `lark-cli auth status` 的 bot 是 ready；
-> 4. 确认 `bot/brain_home/auth.json` 里的 Key 能连通（跑一个最小测试）；
-> 5. 帮我在飞书开发者后台配好“事件订阅 im.message.receive_v1（长连接模式）”和机器人消息权限，告诉我具体点哪里；
-> 6. 全部就绪后，帮我启动 `bot/runner.py`，我在飞书里给机器人发一句“你好”测试；
+> 1. 帮我把 `bot/config.json` 里带 `<...>` 的都填好——我的机器人信息如下：
+>    - 机器人名字：（你告诉它）
+>    - 飞书 App ID：（粘贴你的 cli_ 开头的 ID）
+>    - 飞书 App Secret：（粘贴你的 Secret）
+>    - 用 lark-cli 帮我查我的 open_id 和名字
+> 2. 用我的 App ID / Secret 帮我配置 lark-cli 的 bot 身份（`lark-cli config init`），确认 `lark-cli auth status` 的 bot 是 ready；
+> 3. 帮我把 `bot/prompts/PROTOCOL.md` 里的"本助手"和"主人"替换成我的机器人名和我的名字；
+> 4. 确认大脑后端能连通（Claude CLI 或企业网关，跑一个最小测试）；
+> 5. 帮我在飞书开发者后台配好"事件订阅 im.message.receive_v1（长连接模式）"和机器人消息权限，告诉我具体点哪里；
+> 6. 全部就绪后，帮我启动 `bot/runner.py`，我在飞书里给机器人发一句"你好"测试；
 > 7. 我确认能收到回复后，帮我配好 7×24 常驻（launchd）。
+> 遇到需要我去飞书后台点的操作，请给我明确的"点哪里、填什么"。
 > 遇到需要我去飞书后台点的操作，请给我明确的"点哪里、填什么"。
 
 3. 之后就是**它说一步、你做一步**。卡住了就把报错截图/文字发给它。
